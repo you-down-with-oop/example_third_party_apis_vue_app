@@ -36,6 +36,9 @@ export default {
       console.log(response.data);
       this.redditPosts = response.data.data.children;
     });
+    axios.get("http://localhost:3000/api/newsapi_headlines").then(response => {
+      console.log("newsapi", response.data);
+    });
   },
   methods: {}
 };
