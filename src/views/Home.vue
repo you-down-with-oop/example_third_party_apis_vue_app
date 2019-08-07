@@ -1,5 +1,10 @@
 <template>
   <div class="home">
+    <a
+      href="https://accounts.spotify.com/authorize?client_id=5b392530b00147d788370b060832b220&response_type=code&redirect_uri=http://localhost:8080"
+    >
+      Connect to Spotify
+    </a>
     <h1>{{ message }}</h1>
 
     <div v-for="post in redditPosts">
