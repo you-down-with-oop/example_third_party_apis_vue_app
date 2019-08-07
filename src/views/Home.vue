@@ -44,6 +44,15 @@ export default {
     axios.get("http://localhost:3000/api/newsapi_headlines").then(response => {
       console.log("newsapi", response.data);
     });
+    var spotifyCode = this.$route.query.code;
+    if (spotifyCode) {
+      console.log("Spotify code", spotifyCode);
+      axios.post("http://localhost:3000/api/spotify_authorize", { code: spotifyCode }).then(response => {
+        console.log("spotify token", response.data.access_token);
+        localStorage.setItem("spotify_access_token", response.data.access_token);
+        this.$router.push("/");
+      });
+    }
   },
   methods: {}
 };
